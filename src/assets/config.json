@@ -1,0 +1,11 @@
+{
+  "$schema": "./config.schema.json",
+  "BECKEND_CONTEXT": "https://develop-oncoalertness.dev.teh-lab.ru",
+  "FIELD_CODE_RESULT": "someField",
+  "LOGO_IMG": "logotip2.jpg",
+  "TITLE_TEXT": "ООО \"МЕДЛАЙФ\"",
+  "ORGANIZATION_TEXT": "медицинский  центр",
+  "PHONES": ["8(3846) 652-652", "8-903-0-677-888"],
+  "ADDRESS": "Кемеровская обл. г. Прокопьевск ул. Гайдара, дом 50а Офис 303",
+  "EMAIL": "medlife.prk@mail.ru"
+}
