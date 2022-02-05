@@ -1,39 +1,28 @@
 <div class="main-container" fxLayout="column">
-  <div class="header" fxLayout="column">
-    <div class="header-content">
-      <div class="logo">
-        <img *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/' + (config$ | async).LOGO_IMG">
-      </div>
-      <div class="organization" fxLayout="column" fxLayoutGap="36px">
-        <div class="name">
-          {{(config$ | async)?.TITLE_TEXT}}
+  <div class="header" fxLayout="row">
+    <div class="logo" routerLink="main">
+      <img *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/' + (config$ | async).LOGO_IMG">
+    </div>
+
+    <div class="content" fxLayout="column">
+      <div class="contacts" fxLayout="column">
+        <div class="address" fxLayoutAlign="end">
+          <span>{{(config$ | async).ADDRESS}}</span>
         </div>
-        <div class="goal">
-          {{(config$ | async)?.ORGANIZATION_TEXT}}
-        </div>
-      </div>
-      <div class="info" fxLayout="column" fxLayoutGap="8px">
-        <div class="phone" fxLayout="row" fxLayoutGap="16px">
-          <span>Тел:</span>
-          <div fxLayout="column">
-            <span *ngFor="let phone of (config$ | async)?.PHONES">{{phone}}</span>
+        <div fxLayout="row" fxLayoutAlign="end">
+          <div class="phone" *ngFor="let phone of (config$ | async).PHONES">
+            <span>{{phone}}</span>
           </div>
         </div>
-        <div>
-          {{(config$ | async)?.ADDRESS}}
-        </div>
-        <div>
-          {{(config$ | async)?.EMAIL}}
-        </div>
       </div>
-    </div>
-    <div class="menu">
-      <ul fxLayout="row">
-        <li [class.current]="(currentPage$ | async) === index" [routerLink]="[element.path]" (click)="setCurrent(index)"
-          *ngFor="let element of (menuElements$ | async); let index = index">
-          <span>{{element.name}}</span>
-        </li>
-      </ul>
+      <div class="menu">
+        <ul fxLayout="row">
+          <li [class.current]="(currentPage$ | async) === index" [routerLink]="[element.path]" (click)="setCurrent(index)"
+            *ngFor="let element of (menuElements$ | async); let index = index">
+            <span>{{element.name}}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="content-container">

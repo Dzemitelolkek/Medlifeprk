@@ -5,10 +5,8 @@ $alpha: map-get($theme, alpha);
 :host {
   display: flex;
   flex-direction: row;
-  height: calc(100% - 32px);
+  height: 100%;
   overflow: auto;
-  background: linear-gradient(#abd8e1, #e2eff3);
-  padding: 16px;
 
   .main-container {
     background-color: #fff;
@@ -26,134 +24,72 @@ $alpha: map-get($theme, alpha);
     .header {
       width: 100%;
       flex-basis: 87px;
+      border-bottom: 1px solid rgb(58, 58, 58);
+      
+      .logo {
+        cursor: pointer;
 
-      .header-content {
-        padding: 25px 25px;
-        display: flex;
-        flex-direction: row;
+        img {
+          height: 120px;
+        }
+      }
+
+      .content {
+        flex-grow: 1;
         justify-content: space-between;
 
-        .logo {
-          img {
-            height: 140px;
-          }
-        }
-
-        .organization {
-          margin: auto;
-          border-left: 2px solid #d7dadd;
-          padding-left: 32px;
-          height: 140px;
-
-          .name {
-            margin: auto;
-            font-size: 36pt;
-            color: #007236;
-          }
-
-          .goal {
-            margin: auto;
-            font-size: 28pt;
-            font-style: italic;
-          }
-        }
-
-        .info {
-          margin-top: auto;
-          margin-bottom: auto;
-          padding-left: 16px;
-          padding-bottom: 20px;
-          width: 260px;
+        .contacts {
+          height: 45px;
+          font-size: 15px;
 
           .phone {
-            position: relative;
-
-            &::after {
-              content: '';
-              width: 50px;
-              height: 50px;
-              position: absolute;
-              left: -35px;
-              background: url(../../../assets/images/tel.png) no-repeat left top;
-            }
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 120px;
           }
-        }
-      }
 
-      .menu {
-        height: 47px;
-        background: linear-gradient(#85c21d, #6ca312);
-        margin: 0 25px 50px 25px;
-        position: relative;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -khtml-border-radius: 5px;
-        box-shadow: 0px 2px 6px rgba(201, 201, 201, 0.8);
-        -moz-box-shadow: 0px 2px 6px rgba(201, 201, 201, 0.8);
-        -webkit-box-shadow: 0px 2px 6px rgba(201, 201, 201, 0.8);
-        -khtml-box-shadow: 0px 2px 6px rgba(201, 201, 201, 0.8);
-
-        ul {
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
-
-          li {
-            padding: 0 16px;
-            flex-grow: 1;
-            display: flex;
-            position: relative;
-            cursor: pointer;
-            outline: none;
-
-            &:hover {
-              background-color: #466d08;
-            }
-
-            &.current {
-              cursor: default;
-              color: #f0ea83;
-              background-color: #54980e;
-            }
-
-            &:not(:first-child)::before {
-              content: "";
-              position: absolute;
-              height: 47px;
-              width: 1px;
-              top: 0px;
-              left: 0;
-              background-color: #99c847;
-            }
-
-            &:first-child {
-              border-top-left-radius: 5px;
-              border-bottom-left-radius: 5px;
-            }
-            
-            &:last-child {
-              border-top-right-radius: 5px;
-              border-bottom-right-radius: 5px;
-            }
-            
+          .address {
             span {
-              margin: auto;
-              color: #fff;
-              font: bold 14px/47px Arial, Helvetica, sans-serif;
-              display: block;
-              text-decoration: none;
-              text-shadow: 0 1px 1px rgba(78, 109, 24, 0.8);
-              text-transform: uppercase;
-              white-space: nowrap;
+              width: 470px;
+            }
+          }
+        }
+        .menu {
+          position: relative;
+  
+          ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+  
+            li {
+              padding: 0 16px;
+              flex-grow: 1;
+              display: flex;
+              position: relative;
+              cursor: pointer;
+              outline: none;
+  
+              &:hover {
+                
+              }
+  
+              &.current {
+                cursor: default;
+              }
+  
+              span {
+                margin: auto;
+                color: rgb(58, 58, 58);
+                font: normal 18px/34px Arial, Helvetica, sans-serif;
+                display: block;
+                text-decoration: none;
+                white-space: nowrap;
+              }
             }
           }
         }
       }
-    }
-
-    .content-container {
-      padding: 0 25px;
     }
   }
 

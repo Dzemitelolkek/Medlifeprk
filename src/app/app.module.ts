@@ -22,11 +22,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AboutComponent } from './components/about/about.component';
-import { CommentsComponent } from './components/comments/comments.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
-import { ForPatientComponent } from './components/for-patient/for-patient.component';
 import { ServicesComponent } from './components/services/services.component';
 import { SpecialistsComponent } from './components/specialists/specialists.component';
+import { CaruselComponent } from './components/carusel/carusel.component';
 
 import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
@@ -38,11 +37,10 @@ import { MenuEffects } from './effects/menu.effects';
     MainComponent,
     MainPageComponent,
     AboutComponent,
-    CommentsComponent,
     ContactsComponent,
-    ForPatientComponent,
     ServicesComponent,
-    SpecialistsComponent
+    SpecialistsComponent,
+    CaruselComponent,
   ],
   imports: [
     BrowserModule,

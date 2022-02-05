@@ -7,13 +7,11 @@ import { State } from './../reducers/index';
 import { tap } from 'rxjs/operators';
 
 const elements = [
-{name: 'ГЛАВНАЯ', path: 'main'},
-{name: 'О КЛИНИКЕ', path: 'about'},
-{name: 'СПЕЦИАЛИСТЫ', path: 'specialists'},
-{name: 'УСЛУГИ', path: 'services'},
-{name: 'ДЛЯ ПАЦИЕНТА', path: 'for-patient'},
-{name: 'КОНТАКТЫ', path: 'contacts'},
-{name: 'ОТЗЫВЫ', path: 'comments'}
+{name: 'Главная', path: 'main'},
+{name: 'Услуги', path: 'services'},
+{name: 'О клинике', path: 'about'},
+{name: 'Специалисты', path: 'specialists'},
+{name: 'Контакты', path: 'contacts'},
 ];
 
 @Injectable()

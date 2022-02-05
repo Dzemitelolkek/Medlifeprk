@@ -7,8 +7,6 @@ import { AboutComponent } from './components/about/about.component';
 import { SpecialistsComponent } from './components/specialists/specialists.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
-import { CommentsComponent } from './components/comments/comments.component';
-import { ForPatientComponent } from './components/for-patient/for-patient.component';
 
 const routes: Routes = [
   {
@@ -56,29 +54,13 @@ const routes: Routes = [
         }
       },
       {
-        path: 'for-patient',
-        component: ForPatientComponent,
-        pathMatch: 'full',
-        resolve: {
-          config: ConfigResolver
-        }
-      },
-      {
         path: 'contacts',
         component: ContactsComponent,
         pathMatch: 'full',
         resolve: {
           config: ConfigResolver
         }
-      },
-      {
-        path: 'comments',
-        component: CommentsComponent,
-        pathMatch: 'full',
-        resolve: {
-          config: ConfigResolver
-        }
-      },
+      }
     ]
   }
 ];
