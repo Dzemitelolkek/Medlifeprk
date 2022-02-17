@@ -26,9 +26,12 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { ServicesComponent } from './components/services/services.component';
 import { SpecialistsComponent } from './components/specialists/specialists.component';
 import { CaruselComponent } from './components/carusel/carusel.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 
 @NgModule({
@@ -41,6 +44,8 @@ import { MenuEffects } from './effects/menu.effects';
     ServicesComponent,
     SpecialistsComponent,
     CaruselComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { MenuEffects } from './effects/menu.effects';
     HttpClientModule,
     FlexLayoutModule,
     AngularSvgIconModule.forRoot(),
+    MatCarouselModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

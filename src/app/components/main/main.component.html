@@ -1,31 +1,7 @@
-<div class="main-container" fxLayout="column">
-  <div class="header" fxLayout="row">
-    <div class="logo" routerLink="main">
-      <img *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/' + (config$ | async).LOGO_IMG">
-    </div>
-
-    <div class="content" fxLayout="column">
-      <div class="contacts" fxLayout="column">
-        <div class="address" fxLayoutAlign="end">
-          <span>{{(config$ | async).ADDRESS}}</span>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="end">
-          <div class="phone" *ngFor="let phone of (config$ | async).PHONES">
-            <span>{{phone}}</span>
-          </div>
-        </div>
-      </div>
-      <div class="menu">
-        <ul fxLayout="row">
-          <li [class.current]="(currentPage$ | async) === index" [routerLink]="[element.path]" (click)="setCurrent(index)"
-            *ngFor="let element of (menuElements$ | async); let index = index">
-            <span>{{element.name}}</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="main-container" fxLayout="column" fxLayoutAlign="space-between">
+  <app-header></app-header>
   <div class="content-container">
     <router-outlet></router-outlet>
   </div>
+  <app-footer></app-footer>
 </div>
