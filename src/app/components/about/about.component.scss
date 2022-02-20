@@ -1,0 +1,10 @@
+.flex-container {
+    display: flex;
+
+    .first {
+        flex-basis:300px;
+    }
+    .second {
+         flex-basis: 800px;   
+    }
+}
