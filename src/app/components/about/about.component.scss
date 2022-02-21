@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+
+    .first {
+        flex-basis:400px;
+        color: rgb(51, 139, 135);
+        padding: 36px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 28px;
+
+        p span {
+            font-size: 14pt;
+            color: rgb(62, 133, 121);
+        }
+    }
+    .second {
+         flex-basis: 800px;   
+    }
+}
