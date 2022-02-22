@@ -2,7 +2,6 @@
   <div class="logo" routerLink="main">
     <img *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/' + (config$ | async).LOGO_IMG">
   </div>
-
   <div class="content" fxLayout="column">
     <div class="contacts">
       <div class="address" fxLayoutAlign="end">
@@ -13,6 +12,9 @@
           <span>{{phone}}</span>
         </div>
       </div>
+    </div>
+    <div>
+      <h1>ООО "МЕДЛАЙФ"</h1>
     </div>
     <div class="menu">
       <ul>

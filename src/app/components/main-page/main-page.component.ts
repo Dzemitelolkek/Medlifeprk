@@ -9,15 +9,15 @@ export class MainPageComponent {
   services = [
     {
       name: 'first',
-      backgroundImg: '/assets/images/bg_services.jpeg'
+      backgroundImg: '/assets/images/akusher-ginekolog.jpg'
     },
     {
       name: 'second',
-      backgroundImg: '/assets/images/bg_services.jpeg'
+      backgroundImg: '/assets/images/Dermatolog.jpg'
     },
     {
       name: 'third',
-      backgroundImg: '/assets/images/bg_services.jpeg'
+      backgroundImg: '/assets/images/Onkolog-mammolog.jpg'
     },
     {
       name: 'fourth',
