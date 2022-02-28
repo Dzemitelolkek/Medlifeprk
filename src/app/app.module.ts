@@ -10,6 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
+import { SwiperModule } from "swiper/angular";
+import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 
 import { initApp } from './actions/init-app.actions';
 import { reducers, metaReducers, State } from './reducers';
@@ -31,6 +33,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,8 @@ import { MenuEffects } from './effects/menu.effects';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,
@@ -64,7 +70,9 @@ import { MenuEffects } from './effects/menu.effects';
       MenuEffects
     ]),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    SwiperModule,
+    AngularYandexMapsModule,
   ],
   providers: [
     ConfigService,
