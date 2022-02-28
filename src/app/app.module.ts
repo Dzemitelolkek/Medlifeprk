@@ -31,8 +31,6 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
-
 
 @NgModule({
   declarations: [
@@ -53,7 +51,6 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     HttpClientModule,
     FlexLayoutModule,
     AngularSvgIconModule.forRoot(),
-    MatCarouselModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
