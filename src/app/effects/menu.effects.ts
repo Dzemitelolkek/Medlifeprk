@@ -11,6 +11,7 @@ const elements = [
 {name: 'Услуги', path: 'services'},
 {name: 'О клинике', path: 'about'},
 {name: 'Специалисты', path: 'specialists'},
+{name: 'Расписание', path: 'schedule'}, 
 {name: 'Контакты', path: 'contacts'},
 ];
 

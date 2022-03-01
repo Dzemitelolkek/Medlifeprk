@@ -30,6 +30,7 @@ import { SpecialistsComponent } from './components/specialists/specialists.compo
 import { CaruselComponent } from './components/carusel/carusel.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
@@ -48,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     CaruselComponent,
     HeaderComponent,
     FooterComponent,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
