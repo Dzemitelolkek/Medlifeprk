@@ -7,6 +7,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SpecialistsComponent } from './components/specialists/specialists.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,14 @@ const routes: Routes = [
       {
         path: 'contacts',
         component: ContactsComponent,
+        pathMatch: 'full',
+        resolve: {
+          config: ConfigResolver
+        }
+      },
+      {
+        path: 'schedule',
+        component: ScheduleComponent,
         pathMatch: 'full',
         resolve: {
           config: ConfigResolver
