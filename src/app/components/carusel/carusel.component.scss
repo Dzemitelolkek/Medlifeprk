@@ -1,8 +1,7 @@
-:host {
-    .carusel {
-        mat-carousel {
-            width: 100%;
-            margin: auto;
-        }
-    }
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+@import "~swiper/css/navigation";
+
+.carusel {
+    // max-height: 200px;
 }

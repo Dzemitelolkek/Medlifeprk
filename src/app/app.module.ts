@@ -10,6 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
+import { SwiperModule } from "swiper/angular";
+import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 
 import { initApp } from './actions/init-app.actions';
 import { reducers, metaReducers, State } from './reducers';
@@ -32,8 +34,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 
 import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -51,11 +53,12 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,
     AngularSvgIconModule.forRoot(),
-    MatCarouselModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -70,6 +73,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     ]),
     BrowserAnimationsModule,
     MaterialModule,
+    SwiperModule,
+    AngularYandexMapsModule,
   ],
   providers: [
     ConfigService,
