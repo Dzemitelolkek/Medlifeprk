@@ -1,3 +1,10 @@
-.footer {
-    height: 200px;
+@import '/src/assets/theme/main.theme';
+
+:host {
+    background-color: rgba($main-color, 0.2);
+    
+
+    .footer {
+        height: 200px;
+    }
 }

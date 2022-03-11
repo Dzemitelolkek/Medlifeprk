@@ -4,21 +4,10 @@
     .service-container {
         margin: 32px;
         min-height: 300px;
-    
-        > div {
-            overflow: auto;
-            height: 200px;
-            
-            &::-webkit-scrollbar {
-                // display: none;
-            }
-            
-            .service {
-                min-width: 250px;
-                border-radius: 4px;
-                background-color: #adadad;
-                background-size: 100% 100%;
-            }
+
+        .popular-services {
+            height: 30vw;
+            max-height: 250px;
         }
     }
 }

@@ -2,6 +2,94 @@
 @import "~swiper/css/pagination";
 @import "~swiper/css/navigation";
 
+@import "../../../assets/theme/main.theme";
+
 .carusel {
-    // max-height: 200px;
+    .swiper-slide {
+        position: relative;
+        .main-carusel-container {
+            display: flex;
+            width: 100%;
+            height: 30vw;
+            max-height: 350px;
+            background-color: #fff;
+    
+            .image-container {
+                width: 70%;
+                background-size: 100% 140%;
+            }
+        }
+        .parallelogram {
+            width: 60%;
+            height: 100%;
+            transform: skew(310deg);
+            position: absolute;
+            right: -18vw;
+
+            border-left: 3vw solid $main-color;
+            border-right: 3vw solid $main-color;
+
+            display: flex;
+            justify-content: center;
+            
+            // background-color: white;
+            background: linear-gradient(85deg, rgba(255,255,255,1) 0%, rgba(102,241,59,1) 19%, rgba(0,212,255,1) 100%);
+
+            &::after {
+                content: "";
+                display: block;
+                height: 100%;
+                width: calc(100% - 5vw);
+                border-left: 1vw solid $main-color;
+                border-right: 1vw solid $main-color;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                // background-color: rgba($main-color, 0.2);
+            }
+
+            .text-content {
+                transform: skew(-310deg);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                color: #424242;
+                display: flex;
+                flex-direction: column;
+
+                .header {
+                    width: 29vw;
+                    padding-left: 15vw;
+                    padding-top: 1vw;
+
+                    h2 {
+                        font-size: 2.1vw;
+                        line-height: 2vw;
+                        margin: 0;
+                    }
+                }
+                .text {
+                    width: 37vw;
+                    height: 32vh;
+                    padding-left: 4vw;
+                    padding-top: 1vh;
+                    display: flex;
+
+                    markdown {
+                        margin: auto;
+                        font-size: 1.1vw;
+                        line-height: 1.2vw;
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

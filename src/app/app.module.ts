@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { SwiperModule } from "swiper/angular";
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { initApp } from './actions/init-app.actions';
 import { reducers, metaReducers, State } from './reducers';
@@ -36,6 +37,12 @@ import { ConfigService } from './services/config.service';
 import { MenuEffects } from './effects/menu.effects';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PopularServicesComponent } from './components/popular-services/popular-services.component';
+
+import 'prismjs';
+import 'prismjs/components/prism-typescript.min.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
+import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 
 @NgModule({
   declarations: [
@@ -50,6 +57,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     ScheduleComponent,
+    PopularServicesComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +83,7 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     SwiperModule,
     AngularYandexMapsModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [
     ConfigService,

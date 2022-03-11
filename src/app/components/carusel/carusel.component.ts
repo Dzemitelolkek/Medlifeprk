@@ -15,14 +15,26 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class CaruselComponent implements OnInit {
-   
-  slides =  [
-    {'image': '/assets/images/carusel/mc1.jpg'}, 
-    {'image': '/assets/images/carusel/Kardiolog-terapevt.jpg'},
-    {'image': '/assets/images/carusel/MedSestra.jpg'}, 
-    {'image': '/assets/images/carusel/MC2.jpg'}, 
-    {'image': '/assets/images/carusel/MC3.jpg'}
+  slides = [
+    {'image': '/assets/images/carusel/DSCF0006.JPG'},
+    {'image': '/assets/images/carusel/DSCF0022.JPG'},
+    {'image': '/assets/images/carusel/DSCF0026.JPG'},
+    {'image': '/assets/images/carusel/DSCF0036.JPG'},
+    {'image': '/assets/images/carusel/DSCF0072.JPG'},
+    {'image': '/assets/images/carusel/DSCF0095.JPG'},
+
   ];
+
+  markdown = 
+`Медицинский центр «МЕДЛАЙФ» был основан в 2011г.
+В то время весь центр располагался в 2-х кабинетах, которые были в составе другого медицинского центра (МЦ Панацея).
+Прием вели всего 5 врачей специалистов: онколог-маммолог, акушер-гинеколог, эндокринолог, невролог, кардиолог.
+
+Мы работаем со следующими страховыми компаниями (ДМС)
+* ООО СК "СДС"
+* ОАО "АльфаСтрахование"
+* ООО СК "Согласие"
+* ПАО СК "Росгосстрах"`;
 
   constructor() { }
 
