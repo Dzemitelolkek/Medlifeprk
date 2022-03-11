@@ -16,12 +16,12 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 })
 export class CaruselComponent implements OnInit {
    
-  slides = [
-    {'image': '/assets/images/carusel/Oazis.jpg'}, 
+  slides =  [
+    {'image': '/assets/images/carusel/mc1.jpg'}, 
     {'image': '/assets/images/carusel/Kardiolog-terapevt.jpg'},
     {'image': '/assets/images/carusel/MedSestra.jpg'}, 
-    {'image': '/assets/images/carusel/UZI_diagnostika.jpg'}, 
-    {'image': '/assets/images/carusel/Onkolog-mammolog.jpg'}
+    {'image': '/assets/images/carusel/MC2.jpg'}, 
+    {'image': '/assets/images/carusel/MC3.jpg'}
   ];
 
   constructor() { }

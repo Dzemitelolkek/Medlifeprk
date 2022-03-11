@@ -1,0 +1,33 @@
+.flex-container {
+    display: flex;
+
+    .first {
+        flex-basis: 300px;
+        min-width: 300px;
+        color: rgb(51, 139, 135);
+        padding: 32px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 28px;
+
+        p span {
+            font-size: 14pt;
+            color: rgb(62, 133, 121);
+        }
+    }
+    .second {
+        padding: 32px;
+        text-align: justify;
+
+        .licenses {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .image {
+                width: 240px;
+                height: 320px;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
