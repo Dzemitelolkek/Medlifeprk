@@ -8,9 +8,25 @@
         }"
         [navigation]="true"
         class="mySwiper"
+        [autoplay]="{
+            delay: 5000,
+            disableOnInteraction: false
+        }"
     >
         <ng-template swiperSlide *ngFor="let slide of slides">
-            <img [src]="slide.image" alt="">
+            <div class="main-carusel-container">
+                <div class="image-container" [style.background-image]="'url(' + slide.image + ')'"></div>
+            </div>
+            <div class="parallelogram">
+                <div class="text-content">
+                    <div class="header">
+                        <h2>Здесь какой-нибудь заголовок возможно такой длинный</h2>
+                    </div>
+                    <div class="text">
+                        <markdown class="variable-binding" [data]="markdown"></markdown>
+                    </div>
+                </div>
+            </div>
         </ng-template>
   </swiper>
 </div>

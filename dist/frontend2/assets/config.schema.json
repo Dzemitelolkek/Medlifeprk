@@ -39,6 +39,7 @@
     "BECKEND_CONTEXT",
     "FIELD_CODE_RESULT",
     "LOGO_IMG",
+    "LOGO_IMG_BIG",
     "TITLE_TEXT"
   ],
   "additionalProperties": false

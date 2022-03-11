@@ -2,9 +2,8 @@
   <app-carusel></app-carusel>
   <div fxLayout="column" class="service-container">
     <h2>Популярные услуги</h2>    
-    <div fxLayout fxLayoutGap="32px">
-      <div *ngFor="let service of services" class="service" [style.background-image]="'url(' + service.backgroundImg + ')'">
-      </div>
+    <div class="popular-services">
+      <app-popular-services></app-popular-services>
     </div>
   </div>
 </div>

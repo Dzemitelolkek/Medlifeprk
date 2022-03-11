@@ -34,6 +34,7 @@
     "lodash-es": "^4.17.15",
     "lottie-web": "^5.6.2",
     "moment": "^2.24.0",
+    "ngx-markdown": "^13.1.0",
     "ngx-scrollbar": "^3.3.4",
     "ramda": "^0.27.0",
     "rxjs": "~6.5.5",

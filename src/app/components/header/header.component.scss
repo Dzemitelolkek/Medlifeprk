@@ -1,10 +1,23 @@
 @media (max-width:710px)  {
-  :host .header .content {
-    .menu ul {
-      flex-direction: column;
+  :host .header {
+    .logo {
+      img {
+        height: 160px;
+        &.normal {
+          display: none;
+        }
+        &.big {
+          display: block;
+        }
+      }
     }
-    .contacts {
-      display: none;
+    .content {
+      .menu ul {
+        flex-direction: column;
+      }
+      .contacts {
+        display: none;
+      }
     }
   }
 }
@@ -18,7 +31,11 @@
       cursor: pointer;
 
       img {
-        height: 120px;
+        height: 80px;
+
+        &.big {
+          display: none;
+        }
       }
     }
 
