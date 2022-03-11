@@ -15,7 +15,6 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class CaruselComponent implements OnInit {
-   
   slides = [
     {'image': '/assets/images/carusel/DSCF0006.JPG'},
     {'image': '/assets/images/carusel/DSCF0022.JPG'},
@@ -23,6 +22,7 @@ export class CaruselComponent implements OnInit {
     {'image': '/assets/images/carusel/DSCF0036.JPG'},
     {'image': '/assets/images/carusel/DSCF0072.JPG'},
     {'image': '/assets/images/carusel/DSCF0095.JPG'},
+
   ];
 
   markdown = 
