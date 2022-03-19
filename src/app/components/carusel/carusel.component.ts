@@ -17,10 +17,10 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 export class CaruselComponent implements OnInit {
   slides = [
     {'image': '/assets/images/carusel/DSCF0006.JPG'},
-    {'image': '/assets/images/carusel/DSCF0022.JPG'},
-    {'image': '/assets/images/carusel/DSCF0026.JPG'},
-    {'image': '/assets/images/carusel/DSCF0036.JPG'},
-    {'image': '/assets/images/carusel/DSCF0072.JPG'},
+    {'image': '/assets/images/carusel/1.JPG'},
+    {'image': '/assets/images/carusel/2.JPG'},
+    {'image': '/assets/images/carusel/3.JPG'},
+    {'image': '/assets/images/carusel/4.JPG'},
     {'image': '/assets/images/carusel/DSCF0095.JPG'},
 
   ];
