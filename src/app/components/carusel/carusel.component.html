@@ -13,17 +13,24 @@
             disableOnInteraction: false
         }"
     >
-        <ng-template swiperSlide *ngFor="let slide of slides">
+        <ng-template swiperSlide *ngFor="let slide of (caruselData$ | async)?.data">
             <div class="main-carusel-container">
-                <div class="image-container" [style.background-image]="'url(' + slide.image + ')'"></div>
+                <div class="image-container"
+                    [style.background-image]="
+                        'url(' +
+                        (config$ | async)?.BACKEND_CONTEXT +
+                        slide?.attributes?.image?.data.attributes?.formats?.large?.url + 
+                        ')'
+                    "
+                ></div>
             </div>
             <div class="parallelogram">
                 <div class="text-content">
                     <div class="header">
-                        <h2>Здесь какой-нибудь заголовок возможно такой длинный</h2>
+                        <h2>{{slide?.attributes?.header}}</h2>
                     </div>
                     <div class="text">
-                        <markdown class="variable-binding" [data]="markdown"></markdown>
+                        <markdown class="variable-binding" [data]="slide?.attributes?.description"></markdown>
                     </div>
                 </div>
             </div>

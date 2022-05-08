@@ -18,7 +18,7 @@ import { Element, setCurrent } from 'src/app/actions/menu.actions';
 export class HeaderComponent {
   // Стримы
   readonly config$: Observable<Config>;
-  menuElements$: Observable<string[] | Element[]>;
+  menuElements$: Observable<Element[] | string[]>;
   currentPage$: Observable<number>;
 
   constructor(

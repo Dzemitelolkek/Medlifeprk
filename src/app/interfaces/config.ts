@@ -1,5 +1,5 @@
 export interface Config {
-    BECKEND_CONTEXT: string;
+    BACKEND_CONTEXT: string;
     FIELD_CODE_RESULT: string;
     LOGO_IMG: string;
     LOGO_IMG_BIG: string;

@@ -7,13 +7,16 @@
     "$schema": {
       "type": "string"
     },
-    "BECKEND_CONTEXT": {
+    "BACKEND_CONTEXT": {
       "type": "string"
     },
     "FIELD_CODE_RESULT": {
       "type": "string"
     },
     "LOGO_IMG": {
+      "type": "string"
+    },
+    "LOGO_IMG_BIG": {
       "type": "string"
     },
     "TITLE_TEXT": {
@@ -36,7 +39,7 @@
     }
   },
   "required": [
-    "BECKEND_CONTEXT",
+    "BACKEND_CONTEXT",
     "FIELD_CODE_RESULT",
     "LOGO_IMG",
     "LOGO_IMG_BIG",

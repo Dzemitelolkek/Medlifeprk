@@ -20,6 +20,7 @@ import { reducers, metaReducers, State } from './reducers';
 import { environment } from '../environments/environment';
 
 import { ConfigEffects } from './effects/config.effects';
+import { CaruselEffects } from './effects/carusel.effects';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
@@ -43,6 +44,22 @@ import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
+import { CaruselService } from './services/carusel.service';
+import { CrudService } from './services/crud.service';
+import { CompanyHistoryService } from './services/company-history.service';
+import { CompanyHistoryEffects } from './effects/company-history.effects';
+import { DoctorsService } from './services/doctors.service';
+import { DoctorsEffects } from './effects/doctors.effects';
+import { ServiceCategoryService } from './services/service-category.service';
+import { ServiceCategoryEffects } from './effects/serviceCategory.effects';
+import { LicensesService } from './services/licenses.service';
+import { LicensesEffects } from './effects/licenses.effects';
+import { ServiceService } from './services/services.service';
+import { ServiceEffects } from './effects/service.effects';
+import { SpecializationsEffects } from './effects/specializations.effects';
+import { SpecializationsService } from './services/specializations.service';
+import { InsuranceCompaniesEffects } from './effects/insurance-companies.effects';
+import { InsuranceCompaniesService } from './services/insurance-companies.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +94,15 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([
       ConfigEffects,
-      MenuEffects
+      MenuEffects,
+      CaruselEffects,
+      CompanyHistoryEffects,
+      DoctorsEffects,
+      ServiceCategoryEffects,
+      LicensesEffects,
+      ServiceEffects,
+      SpecializationsEffects,
+      InsuranceCompaniesEffects,
     ]),
     BrowserAnimationsModule,
     MaterialModule,
@@ -87,6 +112,14 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
   ],
   providers: [
     ConfigService,
+    CaruselService,
+    CompanyHistoryService,
+    DoctorsService,
+    ServiceCategoryService,
+    LicensesService,
+    ServiceService,
+    SpecializationsService,
+    InsuranceCompaniesService,
     { provide: LOCALE_ID, useValue: 'ru-RU' },
   ],
   bootstrap: [AppComponent]

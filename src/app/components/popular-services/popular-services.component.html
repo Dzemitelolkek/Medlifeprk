@@ -24,7 +24,16 @@
     }"
     class="mySwiper"
   >
-    <ng-template swiperSlide *ngFor="let service of services">
-      <div class="service" [style.background-image]="'url(' + service.backgroundImg + ')'"></div>
+    <ng-template swiperSlide *ngFor="let serCat of (serviceCategories$ | async)">
+      <div class="service" [style.background-image]="'url(' + (config$ | async).BACKEND_CONTEXT + getSerCatPhotoUrl(serCat) + ')'">
+          <div class="signature">
+            <label class="label">
+              {{serCat.attributes?.name}}
+            </label>
+            <p class="description">
+              {{serCat.attributes?.description}}
+            </p>
+          </div>
+      </div>
     </ng-template>
   </swiper>

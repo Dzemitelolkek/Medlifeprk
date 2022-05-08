@@ -1,32 +1,46 @@
-.flex-container {
+@import '/src/assets/theme/main.theme';
+
+.services-cat-container{
+    padding: 32px 16px 16px 16px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-    .first {
-        flex-basis: 300px;
-        min-width: 300px;
-        color: rgb(51, 139, 135);
-        padding: 32px;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 28px;
+    .service {
+        width: 250px;
+        height: 250px;
+        background-size: cover;
+        position: relative;
+        margin: 0 8px 8px 0;
 
-        p span {
-            font-size: 14pt;
-            color: rgb(62, 133, 121);
-        }
-    }
-    .second {
-        padding: 32px;
-        text-align: justify;
-
-        .licenses {
+        .signature {
+            position: absolute;
+            padding: 8px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
+            width: calc(100% - 16px);
+            height: 15%;
+            bottom: 0;
+            background-color: rgba($main-color, 0.75);
+            &:hover {
+                height: 75%;
+                background-color: rgba($main-color, 0.95);
 
-            .image {
-                width: 240px;
-                height: 320px;
-                background-size: 100% 100%;
+                .description {
+                    display: block;
+                }
+            }
+
+            .label {
+                color: white;
+                font-size: 2vh;
+                margin-bottom: 16px;
+            }
+            .description {
+                color: white;
+                font-size: 1.8vh;
+                display: none;
             }
         }
     }

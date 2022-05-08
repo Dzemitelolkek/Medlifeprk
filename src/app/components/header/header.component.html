@@ -1,15 +1,15 @@
 <div class="header" fxLayout="row">
   <div class="logo" routerLink="main">
-    <img class="normal" *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/logos/' + (config$ | async).LOGO_IMG">
-    <img class="big" *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/logos/' + (config$ | async).LOGO_IMG_BIG">
+    <img class="normal" *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/logos/' + (config$ | async)?.LOGO_IMG">
+    <img class="big" *ngIf="(config$ | async)?.LOGO_IMG" [src]="'assets/images/logos/' + (config$ | async)?.LOGO_IMG_BIG">
   </div>
   <div class="content" fxLayout="column">
     <div class="contacts">
       <div class="address" fxLayoutAlign="end">
-        <span>{{(config$ | async).ADDRESS}}</span>
+        <span>{{(config$ | async)?.ADDRESS}}</span>
       </div>
       <div fxLayout="row" fxLayoutAlign="end">
-        <div class="phone" *ngFor="let phone of (config$ | async).PHONES">
+        <div class="phone" *ngFor="let phone of (config$ | async)?.PHONES">
           <span>{{phone}}</span>
         </div>
       </div>

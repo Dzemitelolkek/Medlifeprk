@@ -2,33 +2,64 @@
     height: 50%;
     overflow: hidden;
     min-height: 100%;
-    margin: 32px;
+    margin: 32px 16px 16px 16px;
 
     .block {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        padding-top: 20px;
+
     
         .block_item {
-            flex-basis: 300px;
+            flex-basis: 250px;
             display: flex;
             flex-direction: column;
             margin-bottom: 16px;
-            
-            img {
-                margin: auto;
-                border-radius: 50%;
-            }
-            h3, h4 {
-                text-align: center;
-                margin-bottom: 0;
-            }
-            h3 {
-                line-height: normal;
-                color: #3a3a3a;
-            }
-            h4 {
-                color: #a1a1a1;
+
+            .info {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+
+                &:hover {
+                    -webkit-box-shadow: 0px 0px 16px 10px rgba(34, 60, 80, 0.2);
+                    -moz-box-shadow: 0px 0px 16px 10px rgba(34, 60, 80, 0.2);
+                    box-shadow: 0px 0px 16px 10px rgba(34, 60, 80, 0.2);
+                    z-index: 100;
+                }
+                img {
+                    margin: auto;
+                    margin-bottom: 16px;
+                    border-radius: 3%;
+                }
+                h3, h4 {
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+                h3 {
+                    line-height: normal;
+                    color: #3a3a3a;
+                    font-size: 22px;
+                    line-height: 22px;
+                    font-weight: 700;
+                    word-spacing: 0;
+                    margin-bottom: 8px;
+                    transition: color 300ms;
+                }
+                h4 {
+                    color: #a1a1a1;
+    
+                    font-size: 14px;
+                    letter-spacing: -.75px;
+                    word-spacing: 4px;
+                    transition: color 300ms;
+                    hyphens: auto;
+                    -webkit-hyphens: auto;
+                    -moz-hyphens: auto;
+                    -ms-hyphens: auto;
+                    word-wrap: break-word;
+                }
             }
         }
     }

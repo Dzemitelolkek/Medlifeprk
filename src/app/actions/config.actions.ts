@@ -5,7 +5,7 @@ export interface LoadConfigPayload {
   config: Config;
 }
 
-export const loadConfig = createAction(
-  '[Config] Load Config',
+export const configLoaded = createAction(
+  '[Config] Config loaded',
   props<LoadConfigPayload>()
 );
