@@ -8,16 +8,16 @@ import { configFeatureKey } from '../reducers/config.reducer';
 import { CrudService } from './crud.service';
 import { _getCrudService } from '../util/crud-service-getter';
 import { Router } from '@angular/router';
-import { InsuranceCompanies } from '../interfaces/InsuranceCompanies';
+import { GeneralInfo } from '../interfaces/generalInfo';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InsuranceCompaniesService {
+export class GeneralInfoService {
 
-  protected _crudService: CrudService<{data: InsuranceCompanies}>;
+  protected _crudService: CrudService<{data: GeneralInfo}>;
 
-  getInsuranceCompanies(): Observable<HttpResponse<{data: InsuranceCompanies}>> {
+  getGeneralInfo(): Observable<HttpResponse<{data: GeneralInfo}>> {
     const params: HttpParams = new HttpParams({ fromObject: { populate: '*' } });
 
     return this._crudService.getList({ params });
@@ -34,7 +34,7 @@ export class InsuranceCompaniesService {
         first()
     ).subscribe((config) => {
         this._crudService = _getCrudService(
-            '/insurance-companies',
+            '/general-info',
             config.BACKEND_CONTEXT,
             this._http,
             this._router,

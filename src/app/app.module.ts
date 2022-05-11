@@ -58,8 +58,12 @@ import { ServiceService } from './services/services.service';
 import { ServiceEffects } from './effects/service.effects';
 import { SpecializationsEffects } from './effects/specializations.effects';
 import { SpecializationsService } from './services/specializations.service';
-import { InsuranceCompaniesEffects } from './effects/insurance-companies.effects';
-import { InsuranceCompaniesService } from './services/insurance-companies.service';
+import { GeneralInfoEffects } from './effects/general-info.effects';
+import { GeneralInfoService } from './services/general-info.service';
+import { SpecialistComponent } from './components/specialist/specialist.component';
+import { DoctorsSpecServiceMapEffects } from './effects/doctors-spec-service-map.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { CustomSerializer } from './classes/custom-serializer';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,7 @@ import { InsuranceCompaniesService } from './services/insurance-companies.servic
     AboutComponent,
     ContactsComponent,
     ServicesComponent,
+    SpecialistComponent,
     SpecialistsComponent,
     CaruselComponent,
     HeaderComponent,
@@ -102,12 +107,16 @@ import { InsuranceCompaniesService } from './services/insurance-companies.servic
       LicensesEffects,
       ServiceEffects,
       SpecializationsEffects,
-      InsuranceCompaniesEffects,
+      GeneralInfoEffects,
+      DoctorsSpecServiceMapEffects,
     ]),
     BrowserAnimationsModule,
     MaterialModule,
     SwiperModule,
     AngularYandexMapsModule,
+    StoreRouterConnectingModule.forRoot({
+      serializer: CustomSerializer,
+    }),
     MarkdownModule.forRoot(),
   ],
   providers: [
@@ -119,7 +128,7 @@ import { InsuranceCompaniesService } from './services/insurance-companies.servic
     LicensesService,
     ServiceService,
     SpecializationsService,
-    InsuranceCompaniesService,
+    GeneralInfoService,
     { provide: LOCALE_ID, useValue: 'ru-RU' },
   ],
   bootstrap: [AppComponent]

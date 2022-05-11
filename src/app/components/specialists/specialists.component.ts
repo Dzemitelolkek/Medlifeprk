@@ -35,11 +35,15 @@ export class SpecialistsComponent implements OnInit {
   ngOnInit() {
   }
 
-  getSpec(doc: Doctor): string {
-    return getDoctorSpecializationsString(doc);
+  getSpecsString(doc: Doctor): string {
+    return getDoctorSpecializationsString(doc).join(', ');
   }
 
   getImgPath(doc: Doctor): string {
-    return doc.attributes.doctorPhoto.data.attributes.formats.thumbnail.url;
+    return doc?.attributes.doctorPhoto.data?.attributes.formats.thumbnail.url;
+  }
+  
+  getDoctorUrl(doc: Doctor): string {
+    return `/specialist/${doc.id}`;
   }
 }

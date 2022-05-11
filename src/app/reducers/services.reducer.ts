@@ -4,7 +4,7 @@ import { Service } from '../interfaces/service';
 
 export const serviceFeatureKey = 'services';
 
-export const initialState: Service[] = [];
+export const initialState: Service[] = null;
 
 export const reducer = createReducer(
   initialState,

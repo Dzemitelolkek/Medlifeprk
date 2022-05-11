@@ -4,7 +4,7 @@ import { Specialization } from '../interfaces/specialization';
 
 export const specializationsFeatureKey = 'specializations';
 
-export const initialState: Specialization[] = [];
+export const initialState: Specialization[] = null;
 
 export const reducer = createReducer(
   initialState,

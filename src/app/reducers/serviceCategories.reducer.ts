@@ -4,7 +4,7 @@ import { ServiceCategory } from '../interfaces/service-categories';
 
 export const serviceCategoriesFeatureKey = 'serviceCategories';
 
-export const initialState: ServiceCategory[] = [];
+export const initialState: ServiceCategory[] = null;
 
 export const reducer = createReducer(
   initialState,

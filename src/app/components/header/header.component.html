@@ -6,11 +6,11 @@
   <div class="content" fxLayout="column">
     <div class="contacts">
       <div class="address" fxLayoutAlign="end">
-        <span>{{(config$ | async)?.ADDRESS}}</span>
+        <span>{{(generalInfo$ | async)?.attributes?.address}}</span>
       </div>
       <div fxLayout="row" fxLayoutAlign="end">
-        <div class="phone" *ngFor="let phone of (config$ | async)?.PHONES">
-          <span>{{phone}}</span>
+        <div class="phone" *ngFor="let phone of (generalInfo$ | async)?.attributes?.companyPhones">
+          <span>{{phone.phone}}</span>
         </div>
       </div>
     </div>

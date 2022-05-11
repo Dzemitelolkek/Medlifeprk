@@ -10,9 +10,6 @@
     "BACKEND_CONTEXT": {
       "type": "string"
     },
-    "FIELD_CODE_RESULT": {
-      "type": "string"
-    },
     "LOGO_IMG": {
       "type": "string"
     },
@@ -24,23 +21,10 @@
     },
     "ORGANIZATION_TEXT": {
       "type": "string"
-    },
-    "PHONES": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "ADDRESS": {
-      "type": "string"
-    },
-    "EMAIL": {
-      "type": "string"
     }
   },
   "required": [
     "BACKEND_CONTEXT",
-    "FIELD_CODE_RESULT",
     "LOGO_IMG",
     "LOGO_IMG_BIG",
     "TITLE_TEXT"

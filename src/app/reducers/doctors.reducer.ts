@@ -4,7 +4,7 @@ import { Doctor } from '../interfaces/doctor';
 
 export const doctorsFeatureKey = 'doctors';
 
-export const initialState: Doctor[] = [];
+export const initialState: Doctor[] = null;
 
 export const reducer = createReducer(
   initialState,

@@ -15,9 +15,9 @@ import { Doctor } from '../interfaces/doctor';
 })
 export class DoctorsService {
 
-  protected _crudService: CrudService<Doctor[]>;
+  protected _crudService: CrudService<{data: Doctor[]}>;
 
-  getDoctors(): Observable<HttpResponse<Doctor[]>> {
+  getDoctors(): Observable<HttpResponse<{data: Doctor[]}>> {
     const params: HttpParams = new HttpParams({ fromObject: { populate: '*' } });
 
     return this._crudService.get({ params });

@@ -4,7 +4,7 @@ import { Licenses } from '../interfaces/licenses';
 
 export const licensesFeatureKey = 'licenses';
 
-export const initialState: Licenses[] = [];
+export const initialState: Licenses[] = null;
 
 export const reducer = createReducer(
   initialState,

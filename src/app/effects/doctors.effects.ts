@@ -16,7 +16,7 @@ export class DoctorsEffects {
               filter(val => Boolean(val)),
               first(),
               mergeMap(() => this.doctorsService.getDoctors()),
-              map(his => doctorsLoaded({data: his.body}))
+              map(doctors => doctorsLoaded(doctors.body))
             ))
         );
     });
