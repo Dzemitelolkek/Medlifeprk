@@ -1,5 +1,6 @@
 import { MyImageData } from "./image-data"
 import { Service } from "./service"
+import { Specialization } from "./specialization";
 
 export interface ServiceCategory {
     id: number,
@@ -12,6 +13,9 @@ export interface ServiceCategory {
         },
         categoryPhoto: {
             data: MyImageData
+        },
+        specialization: {
+            data: Specialization
         }
     }
 }

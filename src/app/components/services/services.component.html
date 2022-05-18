@@ -2,13 +2,14 @@
   <div class="service"
     *ngFor="let serCat of (serviceCategories$ | async)"
     [style.background-image]="getSerCatPhotoUrl((config$ | async), serCat)"
+    [routerLink]="[getServiceUrl(serCat)]"
   >
     <div class="signature">
       <label class="label">
         {{serCat.attributes?.name}}
       </label>
       <p class="description">
-        {{serCat.attributes?.description}}
+        <markdown class="variable-binding" [data]="serCat.attributes?.description"></markdown>
       </p>
     </div>
   </div>

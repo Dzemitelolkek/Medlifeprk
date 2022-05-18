@@ -64,6 +64,7 @@ import { SpecialistComponent } from './components/specialist/specialist.componen
 import { DoctorsSpecServiceMapEffects } from './effects/doctors-spec-service-map.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CustomSerializer } from './classes/custom-serializer';
+import { ServiceComponent } from './components/service/service.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { CustomSerializer } from './classes/custom-serializer';
     FooterComponent,
     ScheduleComponent,
     PopularServicesComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,

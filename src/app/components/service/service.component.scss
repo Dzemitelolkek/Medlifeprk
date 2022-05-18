@@ -1,60 +1,29 @@
-@import '/src/assets/theme/main.theme';
-
-.spec-container {
+.service-container {
     margin: 8px 16px 16px 16px;
     display: flex;
     flex-direction: column;
     align-items: start;
 
-    .personal-info{
-        margin-bottom: 32px;    
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
+    .doctors {
+        margin-top: 16px;
 
-        .image {
-            margin: auto;
-            border-radius: 3%;
-            width: 200px;
-            height: 200px;
-            background-size: cover;
-            background-position-x: center;
-            background-position-y: center;
+        h1 {
+            margin: 0;
         }
-
-        .info-card {
-            max-width: 400px;
-        }
-    }
-
-    .services {
-        margin-bottom: 32px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
 
         ::ng-deep {
-            mat-panel-title {
-                font-weight: bold;
-            }
-        }
-    }
-
-    .schedule {
-        width: 100%;
-
-        table {
-            width: 100%;
-
-            ::ng-deep {
-                th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
-                    width: 100px;
+            app-specialists {
+                div {
+                    margin-top: 0px;
                 }
             }
         }
     }
-    
+
+    .services {
+        width: 100%;
+    }
+
     // Button component
     .button {
         position: relative;

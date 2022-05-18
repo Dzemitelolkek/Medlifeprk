@@ -14,6 +14,7 @@
         background-position-x: center;
         position: relative;
         margin: 0 8px 8px 0;
+        cursor: pointer;
 
         .signature {
             position: absolute;
@@ -37,11 +38,14 @@
                 color: white;
                 font-size: 2vh;
                 margin-bottom: 16px;
+                text-shadow: 1px 1px 1px $text-color;
             }
             .description {
                 color: white;
                 font-size: 1.8vh;
                 display: none;
+                text-shadow: 1px 1px 1px $text-color;
+                overflow: auto;
             }
         }
     }

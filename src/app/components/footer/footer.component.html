@@ -1,3 +1,20 @@
-<div class="footer" fxLayout="row">
-  Footer works  
+<div class="footer">
+  <div class="prodoctorov">
+    <a href="https://prodoctorov.ru/prokopevsk/lpu/74007-medlayf/">
+      <img src="./../../../assets/images/logo_prodoctorov.svg" alt="">
+    </a>
+  </div>
+  <div class="contacts">
+    <span>Контакты:</span>
+    <div>
+      <div class="address">
+        <span>{{(generalInfo$ | async)?.attributes?.address}}</span>
+      </div>
+      <div class="phones">
+        <div class="phone" *ngFor="let phone of (generalInfo$ | async)?.attributes?.companyPhones">
+          <span>{{phone.phone}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -57,14 +57,15 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                color: #424242;
+                color: white;
+                text-shadow: 1px 1px 1px $text-color;
                 display: flex;
                 flex-direction: column;
 
                 .header {
                     width: 29vw;
                     padding-left: 15vw;
-                    padding-top: 1vw;
+                    padding-top: 4vw;
 
                     h2 {
                         font-size: 2.1vw;
@@ -81,8 +82,8 @@
 
                     markdown {
                         margin: auto;
-                        font-size: 1.1vw;
-                        line-height: 1.2vw;
+                        font-size: 2vw;
+                        line-height: 2vw;
 
                         p {
                             margin: 0;

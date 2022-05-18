@@ -1,6 +1,6 @@
 <div class="spec-container">
     <button class="button type4" [routerLink]="['/specialists']">
-        < Назад
+        < К докторам
     </button>
     <div class="personal-info">
         <div class="image" [style.background-image]="'url(' + (config$ | async)?.BACKEND_CONTEXT + getImgPath((doctors$ | async)) + ')'"></div>
@@ -25,7 +25,7 @@
                       </mat-expansion-panel-header>
                       <div class="description">
                           <label [for]="'description-' + service.id">Описание:</label>
-                          <p [id]="'description-' + service.id">{{service.attributes?.description}}</p>
+                          <markdown class="variable-binding" [id]="'description-' + service.id" [data]="service.attributes?.description"></markdown>
                       </div>
                       <div class="price">
                         Цена: {{service.attributes?.price}}
@@ -35,9 +35,9 @@
             </div>
         </ng-container>
     </div>
-    <div class="schedule">
+    <div class="schedule" *ngIf="displaySchedule">
         <h2>Расписание</h2>
-        <table mat-table [dataSource]="getDataSource()" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="monday">
                 <th mat-header-cell *matHeaderCellDef>Пнд</th>
                 <td mat-cell *matCellDef="let element">{{element.monday}}</td>

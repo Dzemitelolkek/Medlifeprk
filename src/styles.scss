@@ -100,4 +100,20 @@ body {
       height: 400px;
     }
   }
+  @media (max-width:1024px)  {
+    .mat-expansion-panel-header {
+      height: 64px;
+      &.mat-expanded {
+        height: 80px;
+      }
+    }
+  }
+  @media (max-width:710px)  {
+    .mat-expansion-panel-header {
+      height: 80px;
+      &.mat-expanded {
+        height: 96px;
+      }
+    }
+  }
 }

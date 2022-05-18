@@ -9,6 +9,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { SpecialistComponent } from './components/specialist/specialist.component';
+import { ServiceComponent } from './components/service/service.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,14 @@ const routes: Routes = [
       {
         path: 'services',
         component: ServicesComponent,
+        pathMatch: 'full',
+        resolve: {
+          config: ConfigResolver
+        }
+      },
+      {
+        path: 'service/:id',
+        component: ServiceComponent,
         pathMatch: 'full',
         resolve: {
           config: ConfigResolver

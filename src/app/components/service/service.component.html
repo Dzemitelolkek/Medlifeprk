@@ -1,0 +1,34 @@
+<div class="service-container">
+  <button class="button type4" [routerLink]="['/services']">
+      < К услугам
+  </button>
+  <mat-card class="info-card">
+    <mat-card-title>{{serviceCategory?.attributes?.name}}</mat-card-title>
+    <mat-card-content>
+      <markdown class="variable-binding" [data]="serviceCategory?.attributes?.description"></markdown>
+    </mat-card-content>
+  </mat-card>
+  <div class="doctors" *ngIf="serviceCategory?.attributes?.specialization?.data?.id">
+    <h1>Доктора</h1>
+    <app-specialists sizeSmall="true" [specId]="serviceCategory?.attributes?.specialization?.data?.id"></app-specialists>
+  </div>
+  <div class="services" *ngIf="serviceCategory?.attributes?.services?.data">
+    <h1>Услуги</h1>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle *ngFor="let service of serviceCategory?.attributes?.services?.data">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{service.attributes?.name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="description">
+          <label [for]="'description-' + service.id">Описание:</label>
+          <p [id]="'description-' + service.id">{{service.attributes?.description}}</p>
+        </div>
+        <div class="price">
+          Цена: {{service.attributes?.price}}
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

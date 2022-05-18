@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { filter, first, Observable } from 'rxjs';
+import { filter, first, map, Observable } from 'rxjs';
 import { Config } from 'src/app/interfaces/config';
 import { Doctor } from 'src/app/interfaces/doctor';
 import { State } from 'src/app/reducers';
@@ -13,8 +13,13 @@ import { getDoctorSpecializationsString } from 'src/app/util/getDoctorSpecializa
   templateUrl: './specialists.component.html',
   styleUrls: ['./specialists.component.scss']
 })
-export class SpecialistsComponent implements OnInit {
+export class SpecialistsComponent implements AfterContentChecked {
 
+  @Input()
+  sizeSmall = null;
+  @Input()
+  specId = null;
+  
   doctors$: Observable<Doctor[]>;
   config$: Observable<Config>;
 
@@ -32,7 +37,16 @@ export class SpecialistsComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
+  ngAfterContentChecked() {
+    if (this.specId) {
+      this.doctors$ = this.doctors$.pipe(
+        map(docs => docs.filter(
+          doc => doc.attributes.specializations.data.find(
+            spec => spec.id === this.specId
+          )
+        ))
+      );
+    }
   }
 
   getSpecsString(doc: Doctor): string {

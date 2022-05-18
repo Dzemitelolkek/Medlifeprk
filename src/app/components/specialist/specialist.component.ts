@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { filter, first, Observable, Subscription } from 'rxjs';
 import { clearDoctorsSpecServiceMap, SpecServiceMap } from 'src/app/actions/doctors-spec-service-map.actions';
+import { WeekDays } from 'src/app/enums/week-days';
 import { Config } from 'src/app/interfaces/config';
 import { Doctor } from 'src/app/interfaces/doctor';
 import { State } from 'src/app/reducers';
@@ -32,8 +33,11 @@ export class SpecialistComponent implements OnInit, OnDestroy {
     'saturday',
     'sunday'
   ];
+  dataSource = null;
+  schedule: Array<any> = null;
+  displaySchedule = false;
 
-  private routeSub: Subscription;
+  private subs: Subscription[] = [];
 
   constructor(
     private store$: Store<State>,
@@ -52,15 +56,23 @@ export class SpecialistComponent implements OnInit, OnDestroy {
       filter(val => Boolean(val)),
       first()
     );
-    this.routeSub = this.route.params.subscribe(params => {
+    this.subs.push(this.route.params.subscribe(params => {
       this.specId = params['id'];
-    });
+    }));
   }
 
   ngOnInit() {
+    this.subs.push(this.doctors$.subscribe(doctors => {
+      const doc = this.getDocInfo(doctors);
+      this.schedule = doc?.attributes?.schedule;
+      if (this.schedule?.length > 0) {
+        this.dataSource = this.getDataSource();
+        this.displaySchedule = true;
+      }
+    }));
   }
   ngOnDestroy() {
-    this.routeSub.unsubscribe();
+    this.subs.forEach(s => s.unsubscribe());
     this.store$.dispatch(clearDoctorsSpecServiceMap());
   }
 
@@ -79,20 +91,20 @@ export class SpecialistComponent implements OnInit, OnDestroy {
   }
 
   getImgPath(doctors: Doctor[]): string {
-    return doctors
-      ?.find(doc => doc.id === parseInt(this.specId))
-      ?.attributes.doctorPhoto.data.attributes.formats.thumbnail.url;
+    return doctors?.find(
+      doc => doc.id === parseInt(this.specId)
+    )?.attributes.doctorPhoto.data?.attributes.formats.thumbnail.url;
   }
 
   getDataSource() {
     return [{
-      monday: '9:00 - 18:00',
-      tuesday: '9:00 - 18:00',
-      wednesday: '9:00 - 18:00',
-      thursday: '9:00 - 18:00',
-      friday: '9:00 - 18:00',
-      saturday: '9:00 - 18:00',
-      sunday: '9:00 - 18:00',
+      monday: this.schedule?.find(d => d.day === WeekDays.monday)?.time || '',
+      tuesday: this.schedule?.find(d => d.day === WeekDays.tuesday)?.time || '',
+      wednesday: this.schedule?.find(d => d.day === WeekDays.wednesday)?.time || '',
+      thursday: this.schedule?.find(d => d.day === WeekDays.thursday)?.time || '',
+      friday: this.schedule?.find(d => d.day === WeekDays.friday)?.time || '',
+      saturday: this.schedule?.find(d => d.day === WeekDays.saturday)?.time || '',
+      sunday: this.schedule?.find(d => d.day === WeekDays.sunday)?.time || '',
     }];
   }
 }

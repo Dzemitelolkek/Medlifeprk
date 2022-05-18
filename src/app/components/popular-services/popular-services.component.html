@@ -30,9 +30,7 @@
             <label class="label">
               {{serCat.attributes?.name}}
             </label>
-            <p class="description">
-              {{serCat.attributes?.description}}
-            </p>
+            <markdown class="variable-binding description" [data]="serCat.attributes?.description"></markdown>
           </div>
       </div>
     </ng-template>

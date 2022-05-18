@@ -41,4 +41,10 @@ export class CaruselComponent implements OnInit {
   ngOnInit() {
   }
 
+  getBgImage(slide: Carusel, config: Config) {
+    const formats = slide?.attributes?.image?.data?.attributes?.formats;
+    const imgUrl = formats?.large?.url || formats?.medium?.url || formats?.small?.url;
+    
+    return `url(${config.BACKEND_CONTEXT}${imgUrl})`;
+  }
 }

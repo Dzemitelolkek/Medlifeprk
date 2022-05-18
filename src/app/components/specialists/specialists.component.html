@@ -1,11 +1,11 @@
 <div class="wrapper"> 
   <div class="block">
-    <div class="block_item" *ngFor="let doctor of (doctors$ | async)" [routerLink]="[getDoctorUrl(doctor)]"> 
-      <div class="info">
-        <div class="image" [style.background-image]="'url(' + (config$ | async).BACKEND_CONTEXT + getImgPath(doctor) + ')'"></div>
-        <h3> {{doctor?.attributes?.fullName}} </h3>
-        <h4> {{getSpecsString(doctor)}} </h4>  
-      </div>
+    <div class="block_item" [class.small]="sizeSmall" *ngFor="let doctor of (doctors$ | async)" [routerLink]="[getDoctorUrl(doctor)]"> 
+        <div class="info">
+          <div class="image" [style.background-image]="'url(' + (config$ | async).BACKEND_CONTEXT + getImgPath(doctor) + ')'"></div>
+          <h3> {{doctor?.attributes?.fullName}} </h3>
+          <h4 *ngIf="!sizeSmall"> {{getSpecsString(doctor)}} </h4>  
+        </div>
     </div>
   </div>
 </div>
