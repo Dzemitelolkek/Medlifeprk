@@ -41,7 +41,8 @@ export class PopularServicesComponent {
   }
 
   getSerCatPhotoUrl(serCat) {
-    return serCat.attributes.categoryPhoto.data.attributes.formats.small.url;
+    const formats = serCat?.attributes?.categoryPhoto?.data?.attributes?.formats;
+    return formats?.medium?.url || formats?.small?.url;
   }
   getServiceUrl(serviceCat: ServiceCategory): string {
     return `/service/${serviceCat.id}`;

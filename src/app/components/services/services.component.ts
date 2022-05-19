@@ -34,7 +34,8 @@ export class ServicesComponent implements OnInit {
   }
 
   getSerCatPhotoUrl(config: Config, serCat: ServiceCategory): string {
-    return `url(${config.BACKEND_CONTEXT}${serCat?.attributes?.categoryPhoto?.data?.attributes?.formats?.medium?.url})`;
+    const formats = serCat?.attributes?.categoryPhoto?.data?.attributes?.formats;
+    return `url(${config.BACKEND_CONTEXT}${formats?.medium?.url || formats?.small?.url})`;
   }
   getServiceUrl(serviceCat: ServiceCategory): string {
     return `/service/${serviceCat.id}`;
