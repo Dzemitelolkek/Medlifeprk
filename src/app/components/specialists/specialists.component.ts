@@ -54,7 +54,8 @@ export class SpecialistsComponent implements AfterContentChecked {
   }
 
   getImgPath(doc: Doctor): string {
-    return doc?.attributes.doctorPhoto.data?.attributes.formats.thumbnail.url;
+    const formats = doc?.attributes.doctorPhoto.data?.attributes.formats;
+    return formats?.small?.url || formats?.thumbnail?.url;
   }
   
   getDoctorUrl(doc: Doctor): string {
