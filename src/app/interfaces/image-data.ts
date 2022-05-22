@@ -9,17 +9,19 @@ export interface ImageAttributes {
     caption: string,
     width: number,
     height: number,
-    formats: {
-        thumbnail: ImageFormat,
-        large: ImageFormat,
-        medium: ImageFormat,
-        small: ImageFormat,
-    },
+    formats: Formats,
     hash: string,
     ext: string,
     mime: string,
     size: number,
     url: string,
+}
+
+export interface Formats {
+    thumbnail: ImageFormat,
+    large: ImageFormat,
+    medium: ImageFormat,
+    small: ImageFormat,
 }
 
 export interface ImageFormat {

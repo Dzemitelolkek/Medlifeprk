@@ -26,6 +26,8 @@ import * as fromServices from './services.reducer';
 import * as fromSpecializations from './specializations.reducer';
 import * as fromGeneralInfo from './general-info.reducer';
 import * as fromDoctorsSpecServiceMap from './doctors-spec-service-map.reducer';
+import * as fromGallery from './gallery.reducer';
+import { MyImageData } from '../interfaces/image-data';
 
 export interface State {
   router: RouterReducerState<SerializedRouterStateSnapshot>;
@@ -41,6 +43,7 @@ export interface State {
   [fromSpecializations.specializationsFeatureKey]: Specialization[];
   [fromGeneralInfo.generalInfoFeatureKey]: GeneralInfo;
   [fromDoctorsSpecServiceMap.doctorsSpecServiceMapFeatureKey]: SpecServiceMap;
+  [fromGallery.galleryFeatureKey]: MyImageData[];
 }
 
 export const reducers: ActionReducerMap<State> = {
@@ -57,6 +60,7 @@ export const reducers: ActionReducerMap<State> = {
   [fromSpecializations.specializationsFeatureKey]: fromSpecializations.reducer,
   [fromGeneralInfo.generalInfoFeatureKey]: fromGeneralInfo.reducer,
   [fromDoctorsSpecServiceMap.doctorsSpecServiceMapFeatureKey]: fromDoctorsSpecServiceMap.reducer,
+  [fromGallery.galleryFeatureKey]: fromGallery.reducer,
 };
 
 

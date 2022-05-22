@@ -65,6 +65,8 @@ import { DoctorsSpecServiceMapEffects } from './effects/doctors-spec-service-map
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CustomSerializer } from './classes/custom-serializer';
 import { ServiceComponent } from './components/service/service.component';
+import { GalleryService } from './services/gallery.service';
+import { GalleryEffects } from './effects/gallery.effects';
 
 @NgModule({
   declarations: [
@@ -111,6 +113,7 @@ import { ServiceComponent } from './components/service/service.component';
       SpecializationsEffects,
       GeneralInfoEffects,
       DoctorsSpecServiceMapEffects,
+      GalleryEffects,
     ]),
     BrowserAnimationsModule,
     MaterialModule,
@@ -131,6 +134,7 @@ import { ServiceComponent } from './components/service/service.component';
     ServiceService,
     SpecializationsService,
     GeneralInfoService,
+    GalleryService,
     { provide: LOCALE_ID, useValue: 'ru-RU' },
   ],
   bootstrap: [AppComponent]

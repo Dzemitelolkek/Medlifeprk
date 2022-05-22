@@ -91,9 +91,10 @@ export class SpecialistComponent implements OnInit, OnDestroy {
   }
 
   getImgPath(doctors: Doctor[]): string {
-    return doctors?.find(
+    const formats = doctors?.find(
       doc => doc.id === parseInt(this.specId)
-    )?.attributes.doctorPhoto.data?.attributes.formats.thumbnail.url;
+    )?.attributes.doctorPhoto.data?.attributes.formats;
+    return formats?.small?.url || formats?.thumbnail?.url;
   }
 
   getDataSource() {
