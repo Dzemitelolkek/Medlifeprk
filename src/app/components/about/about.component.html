@@ -1,32 +1,33 @@
 <div class="flex-container">
-  <div class="gallery">
-    <swiper
-      style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
-      [spaceBetween]="10"
-      [navigation]="true"
-      [thumbs]="{ swiper: thumbsSwiper }"
-      class="mySwiper2"
-    >
-      <ng-template swiperSlide *ngFor="let image of (gallery$ | async)">
-        <img [src]="getGalleryImgUrl(image.attributes?.formats, (config$ | async))" />
-      </ng-template>
-    </swiper>
-    <swiper
-      (swiper)="thumbsSwiper = $event"
-      [spaceBetween]="10"
-      [slidesPerView]="4"
-      [freeMode]="true"
-      [watchSlidesProgress]="true"
-      class="mySwiper"
-    >
-      <ng-template swiperSlide *ngFor="let image of (gallery$ | async)">
-        <img [src]="getGalleryImgUrl(image.attributes?.formats, (config$ | async))" />
-      </ng-template>
-    </swiper>
-  </div>
-  <div class="history">
-    <h1>История клиники "Медлайф"</h1>
-    <markdown class="variable-binding" [data]="(history$ | async)?.attributes?.history"></markdown>
+  <div>
+    <div class="gallery">
+      <swiper
+        [spaceBetween]="10"
+        [navigation]="true"
+        [thumbs]="{ swiper: thumbsSwiper }"
+        class="mySwiper2"
+      >
+        <ng-template swiperSlide *ngFor="let image of (gallery$ | async)">
+          <img [src]="getGalleryImgUrl(image.attributes?.formats, (config$ | async))" />
+        </ng-template>
+      </swiper>
+      <swiper
+        (swiper)="thumbsSwiper = $event"
+        [spaceBetween]="10"
+        [slidesPerView]="4"
+        [freeMode]="true"
+        [watchSlidesProgress]="true"
+        class="mySwiper"
+      >
+        <ng-template swiperSlide *ngFor="let image of (gallery$ | async)">
+          <img [src]="getGalleryImgUrl(image.attributes?.formats, (config$ | async))" />
+        </ng-template>
+      </swiper>
+    </div>
+    <div class="history">
+      <h1>История клиники "Медлайф"</h1>
+      <markdown class="variable-binding" [data]="(history$ | async)?.attributes?.history"></markdown>
+    </div>
   </div>
   <div>
     <h1>Лицензии</h1>
