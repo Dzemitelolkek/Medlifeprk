@@ -67,6 +67,7 @@ import { CustomSerializer } from './classes/custom-serializer';
 import { ServiceComponent } from './components/service/service.component';
 import { GalleryService } from './services/gallery.service';
 import { GalleryEffects } from './effects/gallery.effects';
+import { AnaliticService } from './services/analitic.service';
 
 @NgModule({
   declarations: [
@@ -130,6 +131,7 @@ import { GalleryEffects } from './effects/gallery.effects';
     CompanyHistoryService,
     DoctorsService,
     ServiceCategoryService,
+    AnaliticService,
     LicensesService,
     ServiceService,
     SpecializationsService,

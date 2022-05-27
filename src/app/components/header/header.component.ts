@@ -10,6 +10,7 @@ import { currentPageFeatureKey } from 'src/app/reducers/current-page.reducer';
 import { Element, setCurrent } from 'src/app/actions/menu.actions';
 import { GeneralInfo } from 'src/app/interfaces/generalInfo';
 import { generalInfoFeatureKey } from 'src/app/reducers/general-info.reducer';
+import { AnaliticService } from 'src/app/services/analitic.service';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class HeaderComponent {
 
   constructor(
     private store: Store<State>,
+    private analiticService: AnaliticService,
   ) {
     this.config$ = this.store.pipe(
       select(configFeatureKey),

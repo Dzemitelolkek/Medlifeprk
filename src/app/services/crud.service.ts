@@ -62,4 +62,14 @@ export class CrudService<T> {
             throw new Error(`Can't post ${this._path_}`);
         }
     }
+
+    put(body: any, options = {}) {
+        try {
+            console.log(this._context_ + '/api' + this._path_, body);
+            
+            return this._http.put<T>(this._context_ + '/api' + this._path_, body, options);
+        } catch (error) {
+            throw new Error(`Can't PUT. Error: ${error}`);
+        }
+    }
 }
