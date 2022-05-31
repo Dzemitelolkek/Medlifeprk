@@ -1,8 +1,0 @@
-{
-  "$schema": "./config.schema.json",
-  "BACKEND_CONTEXT": "http://62.113.109.30:1337",
-  "LOGO_IMG": "logotip.jpg",
-  "LOGO_IMG_BIG": "logotip2.jpg",
-  "TITLE_TEXT": "ООО \"МЕДЛАЙФ\"",
-  "ORGANIZATION_TEXT": "медицинский  центр"
-}
